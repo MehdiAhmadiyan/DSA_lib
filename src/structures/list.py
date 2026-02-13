@@ -1,8 +1,7 @@
 from src.structures.node import Node
 
-class queue:
+class List:
     def __init__(self):
-        self.head = None
-        self.tail = None
         self.size = 0
-
+        self.front = None
+        self.rear = None

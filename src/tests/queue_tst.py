@@ -19,10 +19,10 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.queue.size, 3)
 
     def test_dequeue(self):
-        self.assertEqual(queue.dequeue(), None)
+        self.assertEqual(self.queue.dequeue(), None)
         self.queue.enqueue(1)
         self.queue.enqueue(2)
-        self.assertEqual(queue.dequeue() , 2)
+        self.assertEqual(self.queue.dequeue() , 2)
         self.assertEqual(self.queue.size, 1)
 
     def test_is_empty(self):
@@ -34,11 +34,9 @@ class MyTestCase(unittest.TestCase):
         self.queue.enqueue(1)
         self.queue.enqueue(2)
         self.queue.enqueue(3)
-        self.assertEqual(queue.head(), self.queue.head.data)
+        self.assertEqual(self.queue.head(), self.queue.head.data)
         self.queue.dequeue()
-        self.assertEqual(queue.head(), self.queue.head.data)
-
-
+        self.assertEqual(self.queue.head(), self.queue.head.data)
 
 if __name__ == '__main__':
     unittest.main()

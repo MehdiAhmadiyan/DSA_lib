@@ -21,17 +21,17 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.stack.top.next.next.data, 2)
 
     def test_is_empty(self):
-        self.assertEqual(stack.is_empty() , True)
+        self.assertEqual(self.stack.is_empty() , True)
         self.stack.push(1)
-        self.assertEqual(stack.is_empty() , False)
+        self.assertEqual(self.stack.is_empty() , False)
 
     def test_top(self):
-        self.assertEqual(stack.top(), None)
+        self.assertEqual(self.stack.top(), None)
         self.stack.push(1)
         self.stack.push(2)
-        self.assertEqual(stack.top(), 2)
+        self.assertEqual(self.stack.top(), 2)
         self.stack.pop()
-        self.assertEqual(stack.top(), 1)
+        self.assertEqual(self.stack.top(), 1)
 
     def test_pop(self):
         self.assertEqual(self.stack.top, None)
@@ -41,7 +41,6 @@ class MyTestCase(unittest.TestCase):
         self.stack.pop()
         self.assertEqual(self.stack.top , 2)
         self.assertEqual(self.stack.size, 2)
-
 
 if __name__ == '__main__':
     unittest.main()
