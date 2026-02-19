@@ -10,10 +10,15 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.list.size, 2)
         self.assertEqual(self.list.front.data, 7)
         self.assertEqual(self.list.rear.data, 5)
+
+    def test_is_empty(self):
+        self.assertEqual(self.list.is_empty(), True)
+        self.list.push_front(5)
+        self.assertEqual(self.list.is_empty(), False)
+
     def test_pop_front(self):
         with self.assertRaises(Exception):  # یا IndexError
             self.list.pop_front()
-
         self.list.push_front(5)
         self.list.push_front(7)
         self.list.push_front(3)
@@ -24,6 +29,7 @@ class MyTestCase(unittest.TestCase):
         self.list.pop_front()
         self.assertEqual(self.list.size, 1)
         self.assertEqual(self.list.front.data, self.list.rear.data)
+
     def test_push_back(self):
         self.list.push_back(5)
         self.assertEqual(self.list.size, 1)
@@ -50,47 +56,48 @@ class MyTestCase(unittest.TestCase):
         self.list.push_back(5)
         self.list.push_back(7)
         self.list.push_back(3)
-        self.list.insert(5, 1)
+        self.list.insert(2, 1)
         self.assertEqual(self.list.size, 4)
-        self.assertEqual(self.list.front.next.data, 5)
+        self.assertEqual(self.list.front.next.data, 2)
         self.list.insert(6 , 4)
         self.assertEqual(self.list.size, 5)
         self.assertEqual(self.list.rear.data, 6)
     def test_delete(self):
         with self.assertRaises(IndexError):
-            self.list.delete(0)
+            self.list.delete(5)
 
         self.list.push_back(5)
         self.list.push_back(7)
         self.list.push_back(3)
         self.list.push_back(1)
-        self.list.delete(3)
-        self.assertEqual(self.list.size, 2)
+        self.list.delete(2)
+        self.assertEqual(self.list.size, 3)
+        self.assertEqual(self.list.rear.prev.data, 7)
+        self.assertEqual(self.list.front.next.data, 7)
     def test_front(self):
         with self.assertRaises(Exception):
-            self.list.front()
+            self.list.get_front()
 
         self.list.push_back(5)
         self.list.push_back(7)
         self.list.push_back(3)
-        self.assertEqual(self.list.front(), self.list.front.data)
+        self.assertEqual(self.list.get_front(), self.list.front.data)
     def test_rear(self):
         with self.assertRaises(Exception):
-            self.list.rear()
+            self.list.get_rear()
 
         self.list.push_back(5)
         self.list.push_back(7)
         self.list.push_back(3)
-        self.assertEqual(self.list.rear(), self.list.rear.data)
+        self.assertEqual(self.list.get_rear(), self.list.rear.data)
     def test_size(self):
-        self.assertEqual(self.list.size, 0)
+        self.assertEqual(self.list.get_size(), 0)
         self.list.push_back(5)
         self.list.push_back(7)
-        self.assertEqual(self.list.size(), self.list.size)
+        self.assertEqual(self.list.get_size(), self.list.size)
 
     """  TO DO:
     add this functios:
-def is_empty(self):           # بررسی خالی بودن لیست
 def clear(self):              # پاک کردن کل لیست
 def find(self, value):        # پیدا کردن اولین مقدار
 def find_all(self, value):    # پیدا کردن همه مقادیر
