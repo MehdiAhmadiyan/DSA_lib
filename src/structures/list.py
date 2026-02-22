@@ -1,10 +1,11 @@
 from src.structures.node import Node
 
 class List:
-    # Attributes of a list
     # EXP:  rear                                              front
     #       7     <->   8   <->   4   <->   8   <->   9   <->   11
     #       Size = 6
+
+    # Attributes of a list
     def __init__(self):
         self.size = 0
         self.front = None
