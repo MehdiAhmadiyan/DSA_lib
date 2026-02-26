@@ -4,22 +4,38 @@ class BinaryTree:
     def __init__(self):
         self.root = None
         self.size = 0
+        self.max = 0
+        self.min = 0
 
+    def is_empty(self):
+        pass
 
-        # TO DO
-        # def is_empty(self)
-        # def size(self)  # تعداد کل نودها
-        # def height(self)  # ارتفاع درخت
-        #
-        #     # 2. پیمایش‌ها (Traversals)
-        # def preorder(self)  # ریشه - چپ - راست
-        # def inorder(self)  # چپ - ریشه - راست
-        # def postorder(self)  # چپ - راست - ریشه
-        #
-        #     # 3. عملیات اصلی
-        # def insert(self, value)  # درج (طبق قانون خاصی مثل کامل بودن)
-        # def delete(self, value)  # حذف (معمولاً با عمیق‌ترین نود)
-        # def search(self, value)  # جستجو
-        # def find_min(self)  # پیدا کردن حداقل
-        # def find_max(self)
+    def get_size(self):
+        pass
 
+    def get_hight(self):
+        pass
+
+    def preorder(self):
+        pass
+
+    def inorder(self):
+        pass
+
+    def postorder(self):
+        pass
+
+    def insert(self, value):
+        pass
+
+    def delete(self, value):
+        pass
+
+    def search(self, value):
+        pass
+
+    def find_max (self):
+        pass
+
+    def find_min (self):
+        pass
